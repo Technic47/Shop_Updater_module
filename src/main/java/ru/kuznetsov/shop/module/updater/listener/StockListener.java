@@ -23,12 +23,12 @@ public class StockListener {
 
     @KafkaListener(topics = STOCK_UPDATE_TOPIC, groupId = "${spring.kafka.consumer.group-id}")
     public void saveProduct(String stockDtoString) throws JsonProcessingException {
-        logger.info("Updating product category {}", stockDtoString);
+        logger.info("Updating stock {}", stockDtoString);
 
         StockDto stockDto = objectMapper.readValue(stockDtoString, StockDto.class);
 
         if (stockDto.getId() == null) {
-            throw new RuntimeException("Product category ID is null");
+            throw new RuntimeException("Stock ID is null");
         } else {
             stockService.update(stockDto);
         }
