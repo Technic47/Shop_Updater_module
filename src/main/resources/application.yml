@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Shop_updater_module
+    name: Updater_module
 
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -14,7 +14,7 @@ spring:
   kafka:
     bootstrap-servers: ${KAFKA_URL}
     consumer:
-      group-id: ${UPDATER_GROUP_ID}
+      group-id: ${MODULE_GROUP_ID}
 
   cache:
     type: redis
