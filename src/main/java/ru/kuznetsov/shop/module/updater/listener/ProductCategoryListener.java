@@ -7,10 +7,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
-import ru.kuznetsov.shop.data.dto.ProductCategoryDto;
 import ru.kuznetsov.shop.data.service.ProductCategoryService;
+import ru.kuznetsov.shop.represent.dto.ProductCategoryDto;
 
-import static ru.kuznetsov.shop.data.common.KafkaTopics.PRODUCT_CATEGORY_UPDATE_TOPIC;
+import static ru.kuznetsov.shop.represent.common.KafkaConst.PRODUCT_CATEGORY_UPDATE_TOPIC;
+
 
 @Component
 @RequiredArgsConstructor
